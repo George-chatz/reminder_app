@@ -2,7 +2,7 @@ const addNote =( myNote) =>{
     console.log(myNote)
 }
 
-const ListNotes = () => {
+const listNotes = () => {
     const allNotes =loadNotes();
     allNotes.map(note, index => {
         console.log(note.reminder[index]);
@@ -10,9 +10,19 @@ const ListNotes = () => {
     });
  };
 
- ListNotes()
+const removeNote = noteToDelete => {
+    const allNotes = loadNotes();
+
+    const notesToKeep=allNotes.filter(note => {
+        return note.reminder != noteToDelete;
+    });
+    saveNotes(notesToKeep);
+}
+
+
 
 module.exports = {
     addNote,
-    ListNotes
+    listNotes,
+    removeNote
 }
