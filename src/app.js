@@ -1,7 +1,7 @@
 
 
 const yargs = require("yargs")
-const {addNote,listNotes,removeNote} = require("../utils/node.js")
+const {addNote,listNotes,removeNote} = require("../utils/note.js")
 
 console.log(process.argv);
 console.log(yargs.argv);
